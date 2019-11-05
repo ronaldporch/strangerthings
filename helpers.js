@@ -78,11 +78,11 @@ const restructureEpisodes = episodes =>
     {}
   )
 
-const restructureShow = show => ({
-  [show.id]: {
-    totalDurationSec: getTotalDurationInSeconds(show._embedded.episodes),
-    averageEpisodesPerSeason: getEpisodeAverage(show._embedded.episodes),
-    episodes: restructureEpisodes(show._embedded.episodes)
+const restructureShow = ({ id, _embedded: { episodes } }) => ({
+  [id]: {
+    totalDurationSec: getTotalDurationInSeconds(episodes),
+    averageEpisodesPerSeason: getEpisodeAverage(episodes),
+    episodes: restructureEpisodes(episodes)
   }
 })
 
