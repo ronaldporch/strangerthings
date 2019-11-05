@@ -1,5 +1,4 @@
 const {
-  getStrangerThingsData,
   runTheChallenge,
   restructureShow,
   restructureEpisodes,
@@ -15,8 +14,7 @@ const {
 
 describe('runTheChallenge()', () => {
   it('should return nothing, but you will see a console.log!', async () => {
-    const strangerThingsData = await getStrangerThingsData()
-    expect(await runTheChallenge(strangerThingsData)).toBe(undefined)
+    expect(await runTheChallenge()).toBe(undefined)
   })
 })
 
